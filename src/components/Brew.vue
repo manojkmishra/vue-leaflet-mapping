@@ -8,11 +8,11 @@
     <div class="row">
       <div class="col-6 brew-list">
         <h2 class="text-center">left</h2>
-        <div class="card" style="width: 18rem;">
+        <div class="card">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <li v-bind:key="index" v-for="(brew,index) in brews" class="list-group-item">
+              {{index}}:{{brew.name}},{{brew.state}}
+            </li>
           </ul>
         </div>
       </div>
@@ -24,11 +24,14 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'Brew',
-  props: {
-    msg: String
-  }
+  data: function() {  return {  brews:[]  }   },
+  mounted:function(){  axios.get('https://api.openbrewerydb.org/breweries')
+                            .then((r)=>{console.log('res=',r)
+                                        this.brews=r.data})    
+                    }
 }
 </script>
 
