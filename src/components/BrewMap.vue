@@ -7,7 +7,7 @@
         <l-marker :key="index" v-for="(brew,index) in brews"
                 :lat-lng="latLng(brew.latitude,brew.longitude)"
                 >
-            <l-icon :icon-size="iconSize" :icon-url="icon"></l-icon>    
+            <l-icon :icon-size="brew.iconSize" :icon-url="icon"></l-icon>    
             <l-popup>{{brew.name}},{{brew.city}},{{brew.state}}</l-popup>
         </l-marker>
     </l-map>
