@@ -6,12 +6,11 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-6 ">
-        
+      <div class="col-6 ">        
           <BrewList v-bind:brews="brews"/>
       </div>
       <div class="col-6">
-        <BrewMap/>
+        <BrewMap v-bind:brews="brews"/>
       </div>
     </div>
    </div>
