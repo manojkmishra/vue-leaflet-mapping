@@ -21,7 +21,7 @@ export default {
      props:{brews:Array},
     data() {
     return {
-      zoom:6, currentZoom:6,
+      zoom:4, currentZoom:3,
       center: L.latLng(32.2467372722906, -110.992750525872),
       currentCenter:L.latLng(32.2467372722906, -110.992750525872),
       url:'https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=a1f6329b5a3f46dd9a41e5eb76d551e8',
